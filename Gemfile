@@ -21,8 +21,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Additional gems
 gem 'devise'
+gem 'font-awesome-rails'
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'faker'
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'faker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
