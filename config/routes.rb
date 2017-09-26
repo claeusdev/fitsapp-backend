@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :messages do
+  	collection do
+  		get :inbox
+  		get :sent
+  	end
+  end
   devise_for :trainers
   devise_for :users
   root 'pages#index'

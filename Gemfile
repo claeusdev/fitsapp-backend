@@ -24,6 +24,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'faker'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
