@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+	before_action :authenticate_user!
+	
 	def index
 		redirect_to inbox_messages_path
 	end
