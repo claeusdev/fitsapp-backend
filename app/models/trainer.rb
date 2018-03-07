@@ -4,6 +4,10 @@ class Trainer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  has_many :conversations, as: :sendable
+  has_many :conversations, as: :recipientable
+
   def self.except(trainer)
   	# all - [user]
     where.not(id: trainer.id)
