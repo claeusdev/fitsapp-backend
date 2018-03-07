@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
 
 	def new
 		@message = Message.new
+		@recipients = (User.all + Trainer.all).map{|r| [r.email, r.id]}
 	end
 
 	def create

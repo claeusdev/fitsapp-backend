@@ -9,7 +9,8 @@ class User < ApplicationRecord
   # Removing current User from list of possible recipients.
   def self.except(user)
   	# all - [user]
-  	where.not(id: user.id)
+    where.not(id: user.id)
+    
   end
 
   def self.recipient_options(user)

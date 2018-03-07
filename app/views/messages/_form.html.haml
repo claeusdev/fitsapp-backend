@@ -1,0 +1,12 @@
+= form_with(model: @message) do |f|
+    .form-group
+        = f.label :reciepient, class: "form-label"
+        = f.select :recipient_id, User.recipient_options(current_user), {}, class: 'form-control' 
+
+    .form-group
+        = f.label "Message body", class: "form-label"
+        = f.text_area :body, class: 'form-control', placeholder: "Your message goes here"
+
+    = f.submit "Send Message", class: "btn btn-secondary"
+
+    

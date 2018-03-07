@@ -1,0 +1,36 @@
+- if user_signed_in? || trainer_signed_in?
+	.container
+		.row.justify-content-center
+			.col-sm-6
+				- if user_signed_in?
+					%h1.text-center= "Logged in as, #{current_user.email}"
+					= link_to('Chat', messages_path, class: "btn btn-dark")
+					= link_to('Log out', destroy_trainer_session_path, method: :delete, class: "btn btn-secondary")
+
+				- elsif trainer_signed_in?
+					%h1.text-center= "Logged in as, #{current_trainer.email}"
+					= link_to('Chat', messages_path, class: "btn btn-dark")
+					= link_to('Log out', destroy_trainer_session_path, method: :delete, class: "btn btn-secondary")
+
+- else
+	.container
+		.row.justify-content-center
+			.col-sm-8.mb-5
+				%h1.text-center Welcome to Fitsmind
+				%p.lead.text-center Combining physical and mental training to help you thrive in 2018
+				.text-center
+					= link_to('Log in as User', new_user_session_path, class: "btn btn-dark")
+					= link_to('Log in as Trainer', new_trainer_session_path, class: "btn btn-dark")
+		%hr/
+
+		%h1.text-center.mb-5.mt-5 Products
+		.row.justify-content-center
+			.col-sm-6
+				%h1 Fitsmind Coach
+				%p.lead Your personally tailored MAP (mental and physical) training guide - with the support of your own dedicated Personal Coach to help you thrive.
+				= link_to('Learn More', "https://www.fitsmind.com/coaching", class: "btn btn-dark")
+			.col-sm-6
+				%h1 Fitsmind Adventures
+				%p.lead From climbing the highest mountain in Africa to mental and physical sailing adventures in the Arctic - develop yourself through exploration.
+				= link_to('Learn More', "https://www.fitsmind.com/adventures", class: "btn btn-dark")
+				
